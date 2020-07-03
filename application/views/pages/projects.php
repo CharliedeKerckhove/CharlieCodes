@@ -4,10 +4,10 @@
     foreach($projects as $project) {
     ?>
         <div class="project-item">
-            <?php if(file_exists('assets/images/'.$project['thumbnail_link'])) {
-                $thumbnail = "assets/images/".$project['thumbnail_link'];
+            <?php if(isset($project['thumbnail_link']) && file_exists('assets/images/'.$project['thumbnail_link'])) {
+                $thumbnail = "/assets/images/".$project['thumbnail_link'];
             } else {
-                $thumbnail = "assets/images/default_thumbnail.jpg";
+                $thumbnail = "/assets/images/default_thumbnail.png";
             }?>
             <img class="project-thumbnail" src="<?=$thumbnail?>"/>
             <div class="project-name">
